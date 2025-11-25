@@ -27,7 +27,7 @@ button.btn-primary::before {
   left: 0;
   width: 100%;
   height: 0%;
-  background-color: #FE4300;
+  background-color: #fe4300;
   transition: height 0.3s ease;
   z-index: 0;
 }
@@ -46,23 +46,39 @@ button.btn-primary:hover::before {
 }
 
 @keyframes wave-animation {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Theme colors (for Tailwind CSS variables) */
 @theme {
-  --color-primary: #FE4300;
+  --color-primary: #fe4300;
   --color-secondary: #868686;
-  --color-softGray: #F0F0F0;
-  --color-mistGray: #D7DCDD;
-  --color-gray: #C0D8E0;
+  --color-softGray: #f0f0f0;
+  --color-mistGray: #d7dcdd;
+  --color-gray: #c0d8e0;
 
   --breakpoint-xs: 425px;
 }
@@ -120,7 +136,10 @@ button.btn-primary:hover::before {
     color: black !important;
   }
 
-  header, footer, .navbar, .no-print {
+  header,
+  footer,
+  .navbar,
+  .no-print {
     display: none !important;
   }
 
@@ -135,7 +154,8 @@ button.btn-primary:hover::before {
     background: transparent !important;
   }
 
-  html, body {
+  html,
+  body {
     height: auto;
     overflow: visible;
   }
@@ -235,4 +255,16 @@ section.case-study-banner {
 .links-study a:hover {
   background: #ff000073;
   border-color: #ff00008c;
+}
+
+.hero-section {
+  padding-top: 100px;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+   
+    min-height: auto;
+  }
 }

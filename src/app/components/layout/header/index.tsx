@@ -13,13 +13,7 @@ interface NavLink {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
-
-  const handleDownloadPDF = () => {
-    window.print();
-  };
 
   const navLinks: NavLink[] = [
     { name: "Home", href: "/" },
@@ -103,6 +97,43 @@ const Header = () => {
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+            <ul className="flex flex-col gap-2 p-4">
+              {navLinks.map((link) => (
+                <li key={link.name} className="flex flex-col">
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(link.href, e, true)}
+                    className="text-gray-700 dark:text-gray-200 font-medium py-2 flex items-center justify-between"
+                  >
+                    {link.name}
+                    {link.subLinks && <ChevronDown size={18} />}
+                  </a>
+
+                  {/* Mobile Dropdown */}
+                  {link.subLinks && (
+                    <ul className="ml-4 mt-1 flex flex-col gap-1">
+                      {link.subLinks.map((sub) => (
+                        <li key={sub.name}>
+                          <a
+                            href={sub.href}
+                            onClick={(e) => handleNavClick(sub.href, e, true)}
+                            className="text-gray-600 dark:text-gray-400 text-sm py-1"
+                          >
+                            {sub.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </header>
   );
