@@ -153,8 +153,8 @@ button.btn-primary:hover::before {
   width: 100%;
   gap: 24px;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding-top: 80px;
 }
 
@@ -194,4 +194,40 @@ section.case-study-banner {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.links-study {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  height: fit-content;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.links-study a {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  color: #ffff;
+  border: 1px solid #5e5e5e;
+  padding: 10px 24px;
+  border-radius: 24px;
+  background: #00000080;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: height 0.3s ease;
+}
+
+.links-study a.mobile-btn {
+  bottom: 72px;
+}
+
+.links-study a:hover {
+  background: #ff000073;
+  border-color: #ff00008c;
 }

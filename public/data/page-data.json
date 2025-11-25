@@ -15,30 +15,13 @@
       },
       {
         "type": "website",
-        "label": "www.mywebsite.com",
+        "label": "https://www.linkedin.com/in/danish-khan-b167851a9/",
         "icon": "/images/icon/web-icon.svg",
-        "link": "https://www.mywebsite.com"
+        "link": "https://www.linkedin.com/in/danish-khan-b167851a9/"
+        
       }
-    ],
-    "socialItems": [
-      {
-        "platform": "instagram",
-        "icon": "/images/icon/dribble-icon.svg",
-        "link": "https://instagram.com"
-      }
-      ,
-      {
-        "platform": "linkedin",
-        "icon": "/images/icon/linkedin-icon.svg",
-        "link": "https://linkedin.com"
-      },
-      {
-        "platform": "facebook",
-        "icon": "/images/icon/facebook-icon.svg",
-        "link": "https://facebook.com"
-      }
-    ]
-  },
+    ] 
+   },
   "educationData": {
     "education": [
       {

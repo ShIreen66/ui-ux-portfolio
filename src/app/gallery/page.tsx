@@ -5,33 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const moreImages = [
-//  "/images/gallery/gallery-img-1.png",
-  // "/images/gallery/gallery-img-2.png",
-  // "/images/gallery/gallery-img-3.png",
-  // "/images/gallery/gallery-img-5.png",
-  "/images/gallery/gallery-img-7.png",
-  "/images/gallery/gallery-img-8.png",
-  "/images/gallery/gallery-img-9.png",
-  "/images/gallery/gallery-img-10.png",
-  "/images/gallery/gallery-img-11.png",
-  "/images/gallery/gallery-img-12.png",
+  "/images/gallery/img-gallery-7.png",
+  "/images/gallery/img-gallery-6.png",
+  "/images/gallery/img-gallery-5.png",
 ];
 
 export default function MoreGalleryPage() {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white container to-gray-50 dark:from-gray-950 dark:to-gray-900 pt-32 pb-20 px-6 md:px-12">
+    <section className="from-white container-fluid to-gray-50 dark:from-gray-950 dark:to-gray-900 pt-10 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
-            <h2>Design Gallery</h2>
-            <p className="text-xl text-orange-500">( 05 )</p>
-          </div>
         <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
           Extended collection of creative projects and UI explorations beyond the main gallery.
         </p>
       </div>
 
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl m-auto"
         style={{ gap: "24px" }}
       >
         {moreImages.map((src, index) => (
@@ -50,11 +39,11 @@ export default function MoreGalleryPage() {
               alt={`Gallery image ${index + 1}`}
               width={600}
               height={400}
-              className="object-cover w-full h-80 transition-transform duration-500 group-hover:scale-110"
+              className="object-contain w-full h-80 transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
               <span className="text-white text-lg font-medium tracking-wide">
-                Project {index + 7}
+                {/* Project {index + 7} */}
               </span>
             </div>
           </motion.div>
@@ -63,7 +52,7 @@ export default function MoreGalleryPage() {
 
 
         <section  id="gallery" >
-      <div className="text-center mt-16">
+      <div className="text-center mt-16 ">
        <Link href="/gallery/more">
         <motion.button
             whileHover={{ scale: 1.05 }}

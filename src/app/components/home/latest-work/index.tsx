@@ -1,100 +1,94 @@
 "use client";
-import { getDataPath, getImgPath } from "@/utils/image";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import React from "react";
 
-const LatestWork = () => {
-  const [workData, setWorkData] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(getDataPath("/data/work-data.json"));
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setWorkData(data?.workData);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const CaseStudies: React.FC = () => {
   return (
-    <section id="work">
-      <div className="bg-softGray">
-        <div className="container">
-          <div className="py-16 xl:py-32 ">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
-              <h2>Latest Works</h2>
-              <p className="text-xl text-orange-500">( 04 )</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
-              {workData?.map((value: any, index: any) => {
-                return (
-                  <div
-                    key={index}
-                    className="group flex flex-col gap-3 xl:gap-6"
-                  >
-                    <div className="relative">
-                      <Image
-                        src={getImgPath(value?.image)}
-                        alt="image"
-                        width={570}
-                        height={414}
-                        className="rounded-lg w-full h-full object-cover"
-                      />
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        href={"#!"}
-                        className="absolute top-0 left-0 backdrop-blur-xs bg-primary/15 w-full h-full hidden group-hover:flex rounded-lg"
-                      >
-                        <span className="flex justify-center items-center p-5 w-full">
-                          <svg
-                            width="65"
-                            height="64"
-                            viewBox="0 0 65 64"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              x="0.333374"
-                              width="64"
-                              height="64"
-                              rx="32"
-                              fill="#FE4300"
-                            />
-                            <path
-                              d="M25.6667 25.3333H39M39 25.3333V38.6666M39 25.3333L25.6667 38.6666"
-                              stroke="#FFFF"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </Link>
-                    </div>
-                    <div className="flex flex-col gap-0 xl:gap-2">
-                      <div className="flex items-center justify-between">
-                        <Link href={`${value.slug}`}>
-                          <h5>{value?.title}</h5>
-                        </Link>
-                        <Image
-                          src={getImgPath("/images/icon/right-arrow-icon.svg")}
-                          alt="right-arrow-icon"
-                          width={30}
-                          height={30}
-                        />
-                      </div>
-                      <p>Client: {value?.client}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+    <section className="case-study flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-950 py-16">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+            <h2 className="pt-10">Design Gallery</h2>
+            <p className="text-xl text-orange-500">( 04 )</p>
+          </div>
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight">
+            Top Case Studies
+          </h1>
+          <div className="mt-3 w-24 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Alsco */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800">
+            <Link href="/case-study/alsco">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/case-study/alsco-mockup.png"
+                  alt="Alsco"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  Alsco Uniforms Portal
+                </h5>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  A B2B platform for managing uniforms, supplies & payments.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Moneyspot */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800">
+            <Link href="/case-study/moneyspot">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/case-study/moneyspot-mockup.png"
+                  alt="Moneyspot"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  Moneyspot Loan Platform
+                </h5>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  Online loan experience with transparency & simplicity.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* ClassCade */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800">
+            <Link href="/case-study/classcade">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/case-study/classcade-mockup.png"
+                  alt="ClassCade"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  ClassCade UX Case Study
+                </h5>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  Gamifying classrooms with rewards for better motivation.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -102,4 +96,4 @@ const LatestWork = () => {
   );
 };
 
-export default LatestWork;
+export default CaseStudies;

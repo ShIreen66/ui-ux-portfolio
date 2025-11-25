@@ -6,8 +6,8 @@ import React from "react";
 
 const CaseStudies: React.FC = () => {
   return (
-    <section className="case-study flex flex-col justify-center items-center h-[77vh] bg-gray-50 dark:bg-gray-950 py-16">
-      <div className="container mx-auto px-6">
+    <section className="case-study flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-950 py-16">
+      <div className="container mx-auto px-6 pt-10">
         {/* Heading */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight">
@@ -86,6 +86,54 @@ const CaseStudies: React.FC = () => {
               </div>
             </Link>
           </div>
+
+          {/* Fintech Spectrum */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800">
+            <Link href="/case-study/fintech-spectrum">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/case-study/fintech-mockup.png"
+                  alt="ClassCade"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  Fintech Spectrum UX Case Study
+                </h5>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  Empowering lenders with a faster, smarter, end-to-end digital lending ecosystem.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Cloud Chillies */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-800">
+            <Link href="/case-study/cloud-chillies">
+              <div className="overflow-hidden">
+                <Image
+                  src="/images/case-study/cloudchillies-mockup.png"
+                  alt="ClassCade"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h5 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+                  CloudChillies Salesforce Case Study
+                </h5>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  Delivering enterprise-grade Salesforce solutions with automation and seamless integrations.
+                </p>
+
+              </div>
+            </Link>
+          </div>
+
         </div>
       </div>
     </section>

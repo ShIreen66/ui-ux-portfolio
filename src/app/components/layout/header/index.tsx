@@ -24,7 +24,7 @@ const Header = () => {
   const navLinks: NavLink[] = [
     { name: "Home", href: "/" },
     { name: "About", href: "#about" },
-    { name: "Work", href: "#work" },
+    { name: "Work", href: "#gallery" },
     {
       name: "Case Study",
       href: "/case-study",
@@ -32,6 +32,8 @@ const Header = () => {
         { name: "Alsco", href: "/case-study/alsco" },
         { name: "Moneyspot", href: "/case-study/moneyspot" },
         { name: "ClassCade", href: "/case-study/classcade" },
+        { name: "Fintech Spectrum", href: "/case-study/fintech-spectrum" },
+        { name: "Cloud Chillies", href: "/case-study/cloud-chillies" },
       ],
     },
   ];

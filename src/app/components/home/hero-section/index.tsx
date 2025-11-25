@@ -4,8 +4,12 @@ import { getImgPath } from "@/utils/image";
 import Image from "next/image";
 
 const Index = () => {
+  // ✔ Download PDF File
   const handleDownloadPDF = () => {
-    window.print();
+    const link = document.createElement("a");
+    link.href = "/Danish Khan Resume.pdf";       
+    link.download = "Danish Khan Resume.pdf"; 
+    link.click();
   };
 
   return (
@@ -55,13 +59,15 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="absolute right-0 top-0 hidden h-auto w-1/2 lg:block 2xl:h-171.5 2xl:w-187.5"
-      style={{top:'56px'}}>
+      <div
+        className="absolute right-0 top-0 hidden h-auto w-1/2 lg:block 2xl:h-171.5 2xl:w-187.5"
+        style={{ top: "56px" }}
+      >
         <Image
           src={getImgPath("/images/home/banner/banner-img.jpg")}
           alt="banner-img"
           width={635}
-            height={600}
+          height={600}
           className="absolute right-0 top-0 z-1"
         />
       </div>

@@ -22,7 +22,7 @@ const EducationSkills = () => {
   }, []);
 
   return (
-    <section>
+    <section className="bg-softGray">
       <div className="border-t border-softGray overflow-hidden">
         <div className="container relative z-10">
           <Image
