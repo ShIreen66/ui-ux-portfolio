@@ -57,9 +57,14 @@ export default function MoreGalleryPage() {
         <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full border border-black/20 dark:border-white/20 text-gray-900 dark:text-white font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+            // className="px-8 py-3 rounded-full border border-black/20 dark:border-white/20 text-gray-900 dark:text-white font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+           className="btn-primary relative overflow-hidden cursor-pointer w-50 py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
           >
-            Open Gallery
+
+             <span className="relative z-10 text-xl font-medium text-black group-hover:text-white transition-colors duration-300">
+                Open Gallery
+              </span>
+            
           </motion.button>
         </Link>
       </div>

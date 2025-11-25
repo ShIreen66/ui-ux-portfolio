@@ -1,5 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Dark mode variant */
 @custom-variant dark (&:is(.dark *));
 
 html {
@@ -12,15 +15,11 @@ body {
   height: 100%;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-
+/* Button Animation */
 button.btn-primary::before {
   content: "";
   position: absolute;
@@ -28,7 +27,7 @@ button.btn-primary::before {
   left: 0;
   width: 100%;
   height: 0%;
-  background-color: #FE4300; 
+  background-color: #FE4300;
   transition: height 0.3s ease;
   z-index: 0;
 }
@@ -37,6 +36,7 @@ button.btn-primary:hover::before {
   height: 100%;
 }
 
+/* Hand wave animation */
 .wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -46,20 +46,17 @@ button.btn-primary:hover::before {
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) } 
-  100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
-
-
-
-
+/* Theme colors (for Tailwind CSS variables) */
 @theme {
   --color-primary: #FE4300;
   --color-secondary: #868686;
@@ -70,18 +67,22 @@ button.btn-primary:hover::before {
   --breakpoint-xs: 425px;
 }
 
+/* Custom utility classes */
 @layer utilities {
   .container {
     @apply w-full max-w-[80rem] mx-auto mt-0 mb-0 py-0 sm:px-7 px-5;
   }
+
   .label {
-    @apply text-secondary text-sm font-normal;
+    @apply text-zinc-500 text-sm font-normal;
   }
+
   .input {
-    @apply w-full border-b border-gray focus:border-primary focus:outline-none py-2;
+    @apply w-full border-b border-zinc-400 focus:border-primary focus:outline-none py-2;
   }
 }
 
+/* Typography defaults */
 @layer base {
   h1 {
     @apply text-4xl md:text-5xl xl:text-7xl 2xl:text-[85px] font-semibold leading-tight;
@@ -108,10 +109,11 @@ button.btn-primary:hover::before {
   }
 
   p {
-    @apply text-base text-secondary;
+    @apply text-base text-zinc-500;
   }
 }
 
+/* Print support */
 @media print {
   body {
     background: white !important;
@@ -138,7 +140,7 @@ button.btn-primary:hover::before {
     overflow: visible;
   }
 
-  .hero-section{
+  .hero-section {
     padding-top: 35px;
   }
 
@@ -148,6 +150,7 @@ button.btn-primary:hover::before {
   }
 }
 
+/* Case study gallery */
 .custom-gallery {
   display: flex;
   width: 100%;
@@ -158,7 +161,7 @@ button.btn-primary:hover::before {
   padding-top: 80px;
 }
 
-.custom-gallery>div {
+.custom-gallery > div {
   border-radius: 10px;
 }
 
@@ -167,6 +170,7 @@ button.btn-primary:hover::before {
   width: 100%;
 }
 
+/* Case study banner */
 section.case-study-banner {
   margin-top: 57px;
   padding: 50px;
@@ -184,12 +188,13 @@ section.case-study-banner {
   color: #aeaeae;
 }
 
-.case-study-banner>div {
+.case-study-banner > div {
   display: flex;
   gap: 10px;
   flex-direction: column;
 }
 
+/* Study content */
 .contnt-study {
   display: flex;
   flex-direction: column;
@@ -210,7 +215,7 @@ section.case-study-banner {
   position: absolute;
   right: 14px;
   bottom: 14px;
-  color: #ffff;
+  color: #fff;
   border: 1px solid #5e5e5e;
   padding: 10px 24px;
   border-radius: 24px;
