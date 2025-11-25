@@ -53,7 +53,7 @@ const Index = () => {
             src={getImgPath("/images/home/banner/banner-img.jpg")}
             alt="banner-img"
             width={635}
-            height={600}
+            height={900}
             className="block lg:hidden"
           />
         </div>
@@ -67,7 +67,7 @@ const Index = () => {
           src={getImgPath("/images/home/banner/banner-img.jpg")}
           alt="banner-img"
           width={635}
-          height={600}
+          height={900}
           className="absolute right-0 top-0 z-1"
         />
       </div>
