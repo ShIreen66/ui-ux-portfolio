@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6 sm:gap-8">
           {/* Divider with logo in center */}
           <div className="relative flex items-center w-full">
-            <div className="flex-grow h-px bg-black dark:bg-white/30" />
+            <div className="flex-grow h-px bg-black dark:bg-white/30" style={{backgroundColor:'#000000ba'}}/>
             <div className="mx-4">
               <Logo />
             </div>
-            <div className="flex-grow h-px bg-black dark:bg-white/30" />
+            <div className="flex-grow h-px bg-black dark:bg-white/30" style={{backgroundColor:'#000000ba'}}/>
           </div>
 
           {/* Contact Info */}

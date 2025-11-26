@@ -13,10 +13,10 @@ const Index = () => {
   };
 
   return (
-    <section className="relative hero-section overflow-hidden pb-12 lg:pb-30 ">
+    <section className="relative hero-section overflow-hidden">
       <div className="container">
         <div className="lg:flex grid grid-cols-1 sm:grid-cols-2 gap-7 md:gap-4 items-center">
-          <div className="flex flex-col gap-4 md:gap-7 max-w-2xl">
+          <div className="flex flex-col gap-4 md:gap-7 max-w-2xl hero-content">
             <div>
               <div className="hero-container flex items-center gap-8">
                 <h1>I'm Danish</h1>

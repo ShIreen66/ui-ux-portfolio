@@ -20,7 +20,7 @@ const ExperienceSec = () => {
             year: "2020",
             title: "Graphic Designer & UI/UX Designer",
             company: "Magnet Brains",
-            type: "Remote",
+            type: "Fulltime",
             description: "Managed website, developed checkout pages, collaborated with stakeholders, and guided creative projects using WordPress, Adobe Photoshop, Illustrator, and Premiere Pro."
         }
         
@@ -28,11 +28,11 @@ const ExperienceSec = () => {
 
     return (
         <section>
-            <div className="py-16 md:py-32">
+            <div className="py-16 md:py-16">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
                         <h2>Experience</h2>
-                        <p className="text-xl text-primary">( 02 )</p>
+                        <p className="text-xl text-primary">( 03 )</p>
                     </div>
 
                     <div className="space-y-7 md:space-y-12">

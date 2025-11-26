@@ -14,9 +14,9 @@ const page = () => {
         <HeroSection />
         <ContactBar />
         <AboutMe />
+        <LatestWork />
         <ExperienceSec />
         <EducationSkills />
-        <LatestWork />
         <Contact />
         <GalleryPage />
       </main>

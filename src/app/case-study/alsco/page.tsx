@@ -93,12 +93,12 @@ const Alsco: React.FC = () => {
           </div>
           <div className="links-study">
             <a target='blank' className='mobile-btn' href="https://www.figma.com/proto/Z6QbhnfLUytDS7K6MjpwEd/Alsco-Web-App?node-id=1058-1748&p=f&t=Ku19gfoMn9UkVVux-1&scaling=scale-down&content-scaling=fixed&page-id=119%3A1762&starting-point-node-id=1058%3A1748">Checkout Mobile figma URL
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width={18} height={18} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width={18} height={18} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </a>
             <a target='blank' href="https://www.figma.com/proto/Z6QbhnfLUytDS7K6MjpwEd/Alsco-Web-App?node-id=1350-6142&p=f&t=kiBIzYtrjrhuq1wt-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1350%3A6142&show-proto-sidebar=1">Checkout Desktop figma URL
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width={18} height={18} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width={18} height={18} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </a>
