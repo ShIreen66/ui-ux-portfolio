@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import Logo from "../logo";
 import { useRouter, usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface NavLink {
   name: string;
@@ -12,16 +12,46 @@ interface NavLink {
   subLinks?: { name: string; href: string }[];
 }
 
-const sidebarVariants = {
-  hidden: { x: "100%", opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 30 } },
-  exit: { x: "100%", opacity: 0, transition: { ease: "easeInOut" } },
+/* ------------------------------
+   FIXED FRAMER-MOTION VARIANTS
+------------------------------ */
+const sidebarVariants: Variants = {
+  hidden: {
+    x: "100%",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 300,
+      damping: 30,
+    },
+  },
+  exit: {
+    x: "100%",
+    opacity: 0,
+    transition: {
+      ease: "easeInOut",
+    },
+  },
 };
 
-const submenuVariants = {
-  hidden: { height: 0, opacity: 0, transition: { duration: 0.18 } },
-  visible: { height: "auto" as any, opacity: 1, transition: { duration: 0.22 } },
+const submenuVariants: Variants = {
+  hidden: {
+    height: 0,
+    opacity: 0,
+    transition: { duration: 0.18 },
+  },
+  visible: {
+    height: "auto",
+    opacity: 1,
+    transition: { duration: 0.22 },
+  },
 };
+
+/* ------------------------------ */
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +65,7 @@ const Header: React.FC = () => {
     { name: "Work", href: "#gallery" },
     {
       name: "Case Study",
-      href: "/case-study", // DISABLED — only dropdown opens
+      href: "/case-study",
       subLinks: [
         { name: "Alsco", href: "/case-study/alsco" },
         { name: "Moneyspot", href: "/case-study/moneyspot" },
@@ -47,7 +77,7 @@ const Header: React.FC = () => {
     },
   ];
 
-  // prevent body scroll when mobile menu open
+  // prevent body scroll when menu is open
   useEffect(() => {
     const original = document.body.style.overflow;
     document.body.style.overflow = isOpen ? "hidden" : original;
@@ -82,20 +112,18 @@ const Header: React.FC = () => {
   return (
     <header className="header-fixed bg-transparent backdrop-blur-sm">
       <div className="container">
-        <nav className="flex justify-between items-center py-2" aria-label="Main navigation">
+        <nav className="flex justify-between items-center py-2">
           <Logo />
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name} className="relative group">
-
-                {/* DISABLE CLICK FOR CASE STUDY */}
                 <a
                   href={link.href}
                   onClick={(e) => {
                     if (link.subLinks) {
-                      e.preventDefault(); // Disable /case-study route
+                      e.preventDefault();
                       return;
                     }
                     handleNavClick(link.href, e);
@@ -108,7 +136,7 @@ const Header: React.FC = () => {
                   {link.subLinks && <ChevronDown size={16} />}
                 </a>
 
-                {/* Desktop Dropdown on Hover */}
+                {/* Desktop Dropdown */}
                 {link.subLinks && (
                   <ul className="absolute left-0 top-full mt-2 w-56 bg-white dark:bg-gray-900 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40">
                     {link.subLinks.map((sub) => (
@@ -128,7 +156,7 @@ const Header: React.FC = () => {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             className="md:hidden text-gray-700 dark:text-gray-200 p-2 rounded-md"
             onClick={() => setIsOpen((v) => !v)}
@@ -167,7 +195,7 @@ const Header: React.FC = () => {
                             href={link.href}
                             onClick={(e) => {
                               if (link.subLinks) {
-                                e.preventDefault(); // disable main click
+                                e.preventDefault();
                                 toggleMobileSubmenu(idx);
                                 return;
                               }
