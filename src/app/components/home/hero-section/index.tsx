@@ -7,8 +7,8 @@ const Index = () => {
   // ✔ Download PDF File
   const handleDownloadPDF = () => {
     const link = document.createElement("a");
-    link.href = "/Danish Khan Resume.pdf";       
-    link.download = "Danish Khan Resume.pdf"; 
+    link.href = "/Danish Khan New Resume.pdf";       
+    link.download = "Danish Khan New Resume.pdf"; 
     link.click();
   };
 
